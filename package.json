@@ -1,0 +1,25 @@
+{
+  "name": "nodehttpserver",
+  "version": "1.0.0",
+  "description": "Primer web server en node js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvalerab/node-httpserver.git"
+  },
+  "keywords": [
+    "http",
+    "express",
+    "node",
+    "webserver"
+  ],
+  "author": "Luis Fernando Valera Bernal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lvalerab/node-httpserver/issues"
+  },
+  "homepage": "https://github.com/lvalerab/node-httpserver#readme"
+}
