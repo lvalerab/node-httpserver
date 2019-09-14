@@ -1,16 +1,18 @@
-const http = require('http');
+const express= require('express');
 
-http.createServer((req,res)=> {
-    res.writeHead(200, {'Content-Type':'application/json'});
+const app =express();
+
+app.get('/', (requets, response) => {
+    response.send('Hola mundo');
+});
+
+app.get('/data', (request,response) => {
     let salida={
-        nombre:'Luis',
-        edad:32,
-        url:req.url
-    };
-    res.write(JSON.stringify(salida));
-    res.end();
-})
-.listen(8080);
+        mensaje:'Esto es una salida'
+    }
+    response.send(salida);
+});
 
-console.log("Escuchando el puerto 8080");
-
+app.listen(8080,()=> {
+    console.log('Escuchando peticiones en el puerto 8080');
+});
