@@ -3,6 +3,8 @@ const hbs=require('hbs');
 
 const app =express();
 
+const port=process.env.PORT || 8080;
+
 /*Middleware*/
 
 ////////////////////////
@@ -36,16 +38,22 @@ app.set('view engine', 'hbs');
 
 app.get('/',(req,res)=> {
     res.render('home',{
-        nombre:'Luis Fernando Valera Bernal',
-        anyo: new Date().getFullYear()
+        nombre:'Luis Fernando Valera Bernal'
     });
 });
+
+/*Helpers de hbs (son funciones que se lanzan cuando se lanza una partial)*/
+require(__dirname+'/hbs/helpers');
 
 app.get('/help',(req,res)=> {
     res.render('help');
 });
 
-app.listen(8080,()=> {
-    console.log('Escuchando peticiones en el puerto 8080');
+app.get('/about', (req,res) => {
+    res.render('about');
+});
+
+app.listen(port,()=> {
+    console.log(`Escuchando peticiones en el puerto ${port}`);
     console.log(`${__dirname}`)
 });
